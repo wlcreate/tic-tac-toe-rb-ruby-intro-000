@@ -123,10 +123,13 @@ def winner(board)
 end
 
 def play(board)
-  input = gets.strip
-  turn_count = 0
-  while turn_count < 9
-    turn(board)
-    turn_count+=1
+  until over?(board)
+    turn(board) 
+  end
+  if won?(board)
+    winner(board) == "X" || winner(board) == "O"
+    puts "Congratulations #{winner(board)}!"
+  else draw?(board)
+    puts "Cat\'s Game!"
   end
 end
