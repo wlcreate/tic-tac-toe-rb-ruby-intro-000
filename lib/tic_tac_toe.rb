@@ -50,7 +50,7 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index, current_player(board))
     display_board(board)
-  else valid_move?(board, index)
+  else 
     turn(board)
   end
 end
